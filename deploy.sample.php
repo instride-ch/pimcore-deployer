@@ -3,8 +3,16 @@
 namespace Deployer;
 
 require __DIR__ . '/vendor/deployer/deployer/recipe/symfony3.php';  //Comes form deployer.phar
-require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipe/pimcore.php';
-require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipe/yarn.php';
+require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/pimcore.php';
+require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/yarn.php';
+
+host('domain.com')
+    ->user('username')
+    ->port(22)
+    ->set('deploy_path', '/home/home_dir')
+    ->identityFile('PATH_TO_SSH_KEY')
+    ->stage('dev')
+    ->set('branch', 'master');
 
 set('repository', 'ssh://git@server:22/vendor/project.git');
 // Can be done via http as well.
@@ -28,8 +36,6 @@ set('shared_dirs', [
     'var/versions',
     'var/sessions'
 ]);
-
-inventory(__DIR__ . '/deployer/servers.yml');
 
 // If your PHP executable is installed within a non standard path, use this:
 /*set('bin/php', function () {

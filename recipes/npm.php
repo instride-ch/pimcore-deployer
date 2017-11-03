@@ -3,10 +3,7 @@
 namespace Deployer;
 
 set('bin/npm', function () {
-    if (commandExist('npm')) {
-        return run('which npm')->toString();
-    }
-    return false;
+    return locateBinaryPath('npm');
 });
 
 task('npm:install', function () {
@@ -18,8 +15,8 @@ task('npm:install', function () {
     run("cd {{release_path}} && {{bin/npm}} install");
 });
 task('npm:production', function() {
-    run('cd {{release_path}} && {{env_vars}} {{bin/npm}} run build');
+    run('cd {{release_path}} && {{bin/npm}} run build');
 });
 task('npm:develop', function() {
-    run('cd {{release_path}} && {{env_vars}} {{bin/npm}} run dev');
+    run('cd {{release_path}} && {{bin/npm}} run dev');
 });

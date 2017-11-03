@@ -12,6 +12,20 @@ composer require w-vision/pimcore-deployer
 
 Installation installs deployer as well.
 
+Now copy following files into your root-folder:
+
+```
+vendor/w-vision/pimcore-deployer/deploy.sample.php -> deploy.php
+```
+
+Edit .deployer/servers.yml to your configuration.
+
 ## Usage
 
 There is a sample deployer configuration file, which shows you how to configure deployer for Pimcore.
+
+### Start Deployment
+
+```
+vendor/bin/dep deploy
+```
