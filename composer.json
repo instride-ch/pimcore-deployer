@@ -1,0 +1,15 @@
+{
+    "name": "w-vision/pimcore-deployer",
+    "description": "Pimcore Deployer Scripts",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Dominik Pfaffenbauer",
+            "email": "dominik@pfaffenbauer.at"
+        }
+    ],
+    "require": {
+        "deployer/deployer": "^6.0"
+    }
+}
