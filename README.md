@@ -18,7 +18,7 @@ Now copy following files into your root-folder:
 vendor/w-vision/pimcore-deployer/deploy.sample.php -> deploy.php
 ```
 
-Edit .deployer/servers.yml to your configuration.
+Edit .deploy.php to suit your configuration.
 
 ## Usage
 
