@@ -1,4 +1,4 @@
-# W-Vision Pimcore Deployer
+# w-vision Pimcore Deployer
 
 This library gives you a clean example of how to use deployer with Pimcore 5.*.
 

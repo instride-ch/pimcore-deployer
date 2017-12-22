@@ -1,10 +1,20 @@
 <?php
+/**
+ * w-vision
+ *
+ * LICENSE
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that is distributed with this source code.
+ *
+ * @copyright  Copyright (c) 2017 w-vision AG (https://www.w-vision.ch)
+ */
 
 namespace Deployer;
 
 require __DIR__ . '/vendor/deployer/deployer/recipe/symfony3.php';  //Comes form deployer.phar
 require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/pimcore.php';
-require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/yarn.php';
+require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/npm.php';
 
 host('domain.com')
     ->user('username')
@@ -14,11 +24,10 @@ host('domain.com')
     ->stage('dev')
     ->set('branch', 'master');
 
-set('repository', 'ssh://git@server:22/vendor/project.git');
 // Can be done via http as well.
+set('repository', 'ssh://git@server:22/vendor/project.git');
 
-//There maybe some files or directories missing.
-
+// There may be some files or directories missing.
 set('default_stage', 'dev');
 set('shared_files', [
     'app/config/parameters.yml',
@@ -43,8 +52,7 @@ set('shared_dirs', [
 });*/
 
 // If you want to use a custom composer file, use this
-/*
-set('bin/composer', function() {
+/*set('bin/composer', function() {
     return '{{bin/php}} composer.phar';
 });*/
 

@@ -1,15 +1,18 @@
 {
-    "name": "w-vision/pimcore-deployer",
-    "description": "Pimcore Deployer Scripts",
-    "type": "library",
-    "license": "GPLv3",
-    "authors": [
-        {
-            "name": "Dominik Pfaffenbauer",
-            "email": "dominik@pfaffenbauer.at"
-        }
-    ],
-    "require": {
-        "deployer/deployer": "^6.0"
+  "name": "w-vision/pimcore-deployer",
+  "type": "library",
+  "license": "GPLv3",
+  "description": "Pimcore Deployer Scripts",
+  "homepage": "https://github.com/w-vision/pimcore-deployer",
+  "authors": [
+    {
+      "name": "w-vision AG",
+      "email": "support@w-vision.ch",
+      "homepage": "https://www.w-vision.ch",
+      "role": "Web Development Agency"
     }
+  ],
+  "require": {
+    "deployer/deployer": "^6.0"
+  }
 }
