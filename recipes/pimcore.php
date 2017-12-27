@@ -17,5 +17,5 @@ task('deploy:pimcore:install-classes', function() {
 });
 
 task('deploy:pimcore:migrate', function() {
-    run('{{bin/console}} pimcore:migrations:migrate');
+    run('{{bin/php}} {{release_path}}/bin/console pimcore:migrations:migrate');
 });
