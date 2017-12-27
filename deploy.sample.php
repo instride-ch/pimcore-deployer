@@ -14,7 +14,7 @@ namespace Deployer;
 
 require __DIR__ . '/vendor/deployer/deployer/recipe/symfony3.php';  //Comes form deployer.phar
 require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/pimcore.php';
-require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/npm.php';
+require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/yarn.php';
 
 host('domain.com')
     ->user('username')
@@ -66,8 +66,8 @@ task('deploy', [
     'deploy:writable',
     'deploy:vendors',
     'deploy:assets:install',
-    'deploy:yarn:install',          //Remove if you don't use yarn
-    'deploy:yarn:encore',           //Remove if you don't use yarn
+    'deploy:yarn:install',          // Remove if you don't use yarn
+    'deploy:yarn:production',       // Remove if you don't use yarn
     'deploy:pimcore:migrate',
     'deploy:clear_paths',
     'deploy:pimcore:install-classes',

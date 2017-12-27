@@ -16,10 +16,20 @@ set('bin/yarn', function () {
     return locateBinaryPath('yarn');
 });
 
-task('deploy:yarn:install', function() {
+task('deploy:yarn:install', function () {
+    if (has('previous_release')) {
+        if (test('[ -d {{previous_release}}/node_modules ]')) {
+            run('cp -R {{previous_release}}/node_modules {{release_path}}');
+        }
+    }
+
     run('cd {{release_path}} && {{bin/yarn}} install');
 });
 
-task('deploy:yarn:encore', function() {
-    run('cd {{release_path}} && {{bin/yarn}} run encore production');
+task('deploy:yarn:develop', function() {
+    run('cd {{release_path}} && {{bin/yarn}} run dev');
+});
+
+task('deploy:yarn:production', function() {
+    run('cd {{release_path}} && {{bin/yarn}} run build');
 });
