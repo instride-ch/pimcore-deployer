@@ -27,9 +27,9 @@ task('deploy:yarn:install', function () {
 });
 
 task('deploy:yarn:develop', function() {
-    run('cd {{release_path}} && {{bin/yarn}} run dev');
+    run('cd {{release_path}} && {{bin/yarn}} run encore dev');
 });
 
 task('deploy:yarn:production', function() {
-    run('cd {{release_path}} && {{bin/yarn}} run build');
+    run('cd {{release_path}} && {{bin/yarn}} run encore production');
 });
