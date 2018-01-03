@@ -26,10 +26,10 @@ task('deploy:yarn:install', function () {
     run('cd {{release_path}} && {{bin/yarn}} install');
 });
 
-task('deploy:yarn:develop', function() {
+task('deploy:yarn:encore:develop', function() {
     run('cd {{release_path}} && {{bin/yarn}} run encore dev');
 });
 
-task('deploy:yarn:production', function() {
+task('deploy:yarn:encore:production', function() {
     run('cd {{release_path}} && {{bin/yarn}} run encore production');
 });

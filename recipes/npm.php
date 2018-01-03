@@ -26,10 +26,10 @@ task('deploy:npm:install', function () {
     run('cd {{release_path}} && {{bin/npm}} install');
 });
 
-task('deploy:npm:develop', function() {
-    run('cd {{release_path}} && {{bin/npm}} run dev');
+task('deploy:npm:encore:develop', function() {
+    run('cd {{release_path}} && node_modules/.bin/encore dev');
 });
 
-task('deploy:npm:production', function() {
-    run('cd {{release_path}} && {{bin/npm}} run build');
+task('deploy:npm:encore:production', function() {
+    run('cd {{release_path}} && node_modules/.bin/encore production');
 });
