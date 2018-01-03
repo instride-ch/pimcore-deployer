@@ -66,8 +66,8 @@ task('deploy', [
     'deploy:writable',
     'deploy:vendors',
     'deploy:assets:install',
-    'deploy:yarn:install',          // Remove if you don't use yarn
-    'deploy:yarn:production',       // Remove if you don't use yarn
+    'deploy:yarn:install',                 // Remove if you don't use yarn
+    'deploy:yarn:encore:production',       // Remove if you don't use yarn
     'deploy:pimcore:migrate',
     'deploy:clear_paths',
     'deploy:pimcore:install-classes',
