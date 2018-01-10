@@ -1,4 +1,4 @@
-# w-vision Pimcore Deployer
+![Pimcore Deployer](docs/images/github_banner.png "Pimcore Deployer")
 
 This library gives you a clean example of how to use deployer with Pimcore 5.*.
 
