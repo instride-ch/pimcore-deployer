@@ -36,7 +36,8 @@ set('shared_files', [
     'var/config/debug-mode.php',
     'var/config/maintenance.php',
     'var/config/web2print.php',
-    'var/config/GeoLite2-City.mmdb'
+    'var/config/GeoLite2-City.mmdb',
+    'var/config/website-settings.php'
 ]);
 set('shared_dirs', [
     'web/var',
