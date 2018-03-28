@@ -71,7 +71,6 @@ task('deploy', [
     'deploy:release',
     'deploy:update_code',
     'deploy:shared',
-    'deploy:pimcore:shared:config',
     'deploy:writable',
     'deploy:vendors',
     'deploy:assets:install',
