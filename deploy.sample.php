@@ -47,6 +47,16 @@ set('shared_dirs', [
     'var/versions',
     'var/sessions'
 ]);
+// the configuration files of pimcore that will be processed at creation
+set('pimcore_shared_configurations', [
+    'var/config/website-settings.php',
+    'var/config/reports.php',
+    'var/config/extensions.php',
+    'var/config/web2print.php',
+    'var/config/workflowmanagement.php',
+    'var/config/perspectives.php',
+    'var/config/customviews.php'
+]);
 
 // If your PHP executable is installed within a non standard path, use this:
 /*set('bin/php', function () {
@@ -65,6 +75,7 @@ task('deploy', [
     'deploy:release',
     'deploy:update_code',
     'deploy:shared',
+    'deploy:pimcore:shared:config',
     'deploy:writable',
     'deploy:vendors',
     'deploy:assets:install',
