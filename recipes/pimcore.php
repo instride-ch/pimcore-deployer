@@ -29,6 +29,6 @@ task('deploy:pimcore:shared:config', function () {
     $emptyContent = "<?php return [];";
 
     foreach (get('pimcore_shared_configurations') as $configFile){
-        run("if [ grep -q '[^[:space:]]' < '$sharedPath/$configFile' ]; then echo '$emptyContent' >> '$sharedPath/$configFile'");
+        run("if [ grep -q '[^[:space:]]' < '$sharedPath/$configFile' ]; then echo '$emptyContent' >> '$sharedPath/$configFile'; fi");
     }
 });
