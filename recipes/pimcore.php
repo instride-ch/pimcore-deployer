@@ -14,7 +14,6 @@ namespace Deployer;
 
 
 
-
 task('deploy:pimcore:install-classes', function() {
     run('{{bin/php}} {{bin/console}} deployment:classes-rebuild -c');
 });
@@ -23,20 +22,22 @@ task('deploy:pimcore:migrate', function() {
     run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate');
 });
 
-
-desc('Create shared files and directories. If there are PHP config files for Pimcore they will
-return an empty PHP array');
+desc('Creating symlinks for shared files and dirs');
 task('deploy:shared', function () {
 
+
     $pimcoreConfigFiles = [
-        'website-settings.php',
-        'reports.php',
-        'extensions.php',
-        'web2print.php',
-        'workflowmanagement.php',
-        'perspectives.php',
-        'customviews.php'
+        'var/config/website-settings.php',
+        'var/config/reports.php',
+        'var/config/extensions.php',
+        'var/config/web2print.php',
+        'var/config/workflowmanagement.php',
+        'var/config/perspectives.php',
+        'var/config/customviews.php'
     ];
+
+    $emptyContent = "<?php return [];";
+
 
     $sharedPath = "{{deploy_path}}/shared";
     // Validate shared_dir, find duplicates
@@ -65,8 +66,6 @@ task('deploy:shared', function () {
         // Symlink shared dir to release dir
         run("{{bin/symlink}} $sharedPath/$dir {{release_path}}/$dir");
     }
-
-
     foreach (get('shared_files') as $file) {
         $dirname = dirname(parse($file));
         // Create dir of shared file
@@ -81,18 +80,15 @@ task('deploy:shared', function () {
         run("if [ -f $(echo {{release_path}}/$file) ]; then rm -rf {{release_path}}/$file; fi");
         // Ensure dir is available in release
         run("if [ ! -d $(echo {{release_path}}/$dirname) ]; then mkdir -p {{release_path}}/$dirname;fi");
-
-
-        // create the file
+        // Touch shared
         run("touch $sharedPath/$file");
 
         // check if pimcore config file
         if(in_array($file, $pimcoreConfigFiles)){
-            // need to create php with return of empty array
-            run("echo '<?php return []; ?>' >> $sharedPath/$file");
+            // return of empty array
+            run("echo '$emptyContent' >> $sharedPath/$file");
+
         }
-
-
 
         // Symlink shared dir to release dir
         run("{{bin/symlink}} $sharedPath/$file {{release_path}}/$file");
