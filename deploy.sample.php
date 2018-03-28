@@ -32,13 +32,9 @@ set('default_stage', 'dev');
 set('shared_files', [
     'app/config/parameters.yml',
     'var/config/system.php',
-    'var/config/extensions.php',
     'var/config/debug-mode.php',
     'var/config/maintenance.php',
-    'var/config/web2print.php',
     'var/config/GeoLite2-City.mmdb',
-    'var/config/website-settings.php',
-    'var/config/reports.php'
 ]);
 set('shared_dirs', [
     'web/var',
