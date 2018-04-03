@@ -49,7 +49,6 @@ set('shared_dirs', [
 set('pimcore_shared_configurations', [
     'var/config/website-settings.php',
     'var/config/reports.php',
-    'var/config/extensions.php',
     'var/config/web2print.php',
     'var/config/workflowmanagement.php'
 ]);
