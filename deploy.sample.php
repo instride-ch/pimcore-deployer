@@ -32,11 +32,11 @@ set('default_stage', 'dev');
 set('shared_files', [
     'app/config/parameters.yml',
     'var/config/system.php',
-    'var/config/extensions.php',
     'var/config/debug-mode.php',
     'var/config/maintenance.php',
-    'var/config/web2print.php',
-    'var/config/GeoLite2-City.mmdb'
+    'var/config/GeoLite2-City.mmdb',
+    'var/config/perspectives.php',
+    'var/config/customviews.php'
 ]);
 set('shared_dirs', [
     'web/var',
@@ -44,6 +44,13 @@ set('shared_dirs', [
     'var/recyclebin',
     'var/versions',
     'var/sessions'
+]);
+// the configuration files of pimcore that will be processed at creation
+set('pimcore_shared_configurations', [
+    'var/config/website-settings.php',
+    'var/config/reports.php',
+    'var/config/web2print.php',
+    'var/config/workflowmanagement.php'
 ]);
 
 // If your PHP executable is installed within a non standard path, use this:
