@@ -35,6 +35,8 @@ set('shared_files', [
     'var/config/debug-mode.php',
     'var/config/maintenance.php',
     'var/config/GeoLite2-City.mmdb',
+    'var/config/perspectives.php',
+    'var/config/customviews.php'
 ]);
 set('shared_dirs', [
     'web/var',
@@ -49,9 +51,7 @@ set('pimcore_shared_configurations', [
     'var/config/reports.php',
     'var/config/extensions.php',
     'var/config/web2print.php',
-    'var/config/workflowmanagement.php',
-    'var/config/perspectives.php',
-    'var/config/customviews.php'
+    'var/config/workflowmanagement.php'
 ]);
 
 // If your PHP executable is installed within a non standard path, use this:
