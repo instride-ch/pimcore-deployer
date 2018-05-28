@@ -7,12 +7,12 @@
  * For the full copyright and license information, please view the LICENSE.md
  * file that is distributed with this source code.
  *
- * @copyright  Copyright (c) 2017 w-vision AG (https://www.w-vision.ch)
+ * @copyright  Copyright (c) 2018 w-vision AG (https://www.w-vision.ch)
  */
 
 namespace Deployer;
 
-require __DIR__ . '/vendor/deployer/deployer/recipe/symfony3.php';  //Comes form deployer.phar
+require __DIR__ . '/vendor/deployer/deployer/recipe/symfony3.php';  // Comes form deployer.phar
 require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/pimcore.php';
 require __DIR__ . '/vendor/w-vision/pimcore-deployer/recipes/yarn.php';
 
@@ -45,7 +45,7 @@ set('shared_dirs', [
     'var/versions',
     'var/sessions'
 ]);
-// the configuration files of pimcore that will be processed at creation
+// The configuration files of pimcore that will be processed at creation
 set('pimcore_shared_configurations', [
     'var/config/website-settings.php',
     'var/config/reports.php',
