@@ -75,6 +75,7 @@ task('deploy', [
     'deploy:assets:install',
     'deploy:yarn:install',                 // Remove if you don't use yarn
     'deploy:yarn:encore:production',       // Remove if you don't use yarn
+    'deploy:pimcore:migrate:core',
     'deploy:pimcore:migrate',
     'deploy:clear_paths',
     'deploy:pimcore:rebuild-classes',

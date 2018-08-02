@@ -20,11 +20,19 @@ task('deploy:pimcore:rebuild-classes', function () {
     run('{{bin/php}} {{bin/console}} deployment:classes-rebuild -c -d');
 });
 
+task('deploy:pimcore:migrate:core', function() {
+    run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate -s pimcore_core -n');
+});
+
 task('deploy:pimcore:migrate', function () {
     run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate');
 });
 
 task('deploy:pimcore:merge:shared', function () {
+    if (!has('pimcore_shared_configurations')) {
+        return;
+    }
+
     $sharedFiles = get('shared_files');
     $pimcoreSharedConfigFiles = get('pimcore_shared_configurations');
 
@@ -36,6 +44,10 @@ before('deploy:shared', 'deploy:pimcore:merge:shared');
 // Process the pimcore config files
 // Add empty array if file is empty
 task('deploy:pimcore:shared:config', function () {
+    if (!has('pimcore_shared_configurations')) {
+        return;
+    }
+
     $sharedPath = "{{deploy_path}}/shared";
     $emptyContent = "<?php return [];";
 
