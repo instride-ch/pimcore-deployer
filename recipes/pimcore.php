@@ -25,7 +25,7 @@ task('deploy:pimcore:migrate:core', function() {
 });
 
 task('deploy:pimcore:migrate', function () {
-    run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate');
+    run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate --allow-no-migration -n');
 });
 
 task('deploy:pimcore:merge:shared', function () {
