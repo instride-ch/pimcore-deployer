@@ -13,11 +13,11 @@
 namespace Deployer;
 
 task('deploy:pimcore:install-classes', function () {
-    run('{{bin/php}} {{bin/console}} deployment:classes-rebuild -c');
+    run('{{bin/php}} {{bin/console}} pimcore:deployment:classes-rebuild -c');
 });
 
 task('deploy:pimcore:rebuild-classes', function () {
-    run('{{bin/php}} {{bin/console}} deployment:classes-rebuild -c -d');
+    run('{{bin/php}} {{bin/console}} pimcore:deployment:classes-rebuild -c -d');
 });
 
 task('deploy:pimcore:migrate:core', function() {
