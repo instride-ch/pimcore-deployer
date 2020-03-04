@@ -17,7 +17,7 @@ task('deploy:pimcore:install-classes', function () {
 });
 
 task('deploy:pimcore:rebuild-classes', function () {
-    run('{{bin/php}} {{bin/console}} pimcore:deployment:classes-rebuild -c -d');
+    run('{{bin/php}} {{bin/console}} pimcore:deployment:classes-rebuild -c -d -n');
 });
 
 task('deploy:pimcore:migrate:core', function() {
