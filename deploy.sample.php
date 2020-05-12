@@ -79,6 +79,7 @@ task('deploy', [
     'deploy:pimcore:migrate',
     'deploy:clear_paths',
     'deploy:pimcore:rebuild-classes',
+    'deploy:pimcore:custom-layouts-rebuild',
     'deploy:symlink',
     'deploy:unlock',
     'cleanup',
