@@ -20,6 +20,10 @@ task('deploy:pimcore:rebuild-classes', function () {
     run('{{bin/php}} {{bin/console}} pimcore:deployment:classes-rebuild -c -d -n');
 });
 
+task('deploy:pimcore:custom-layouts-rebuild', function () {
+    run('{{bin/php}} {{bin/console}} pimcore:deployment:custom-layouts-rebuild -c -d -n');
+});
+
 task('deploy:pimcore:migrate:core', function() {
     run('{{bin/php}} {{bin/console}} pimcore:migrations:migrate -s pimcore_core -n');
 });
